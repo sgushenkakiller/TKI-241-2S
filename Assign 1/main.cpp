@@ -5,8 +5,8 @@
 #include <string>
 
 /**
- * @brief Читает целые числа из файла и выводит их на экран
- * @param filename Имя файла для чтения
+ * @brief Р§РёС‚Р°РµС‚ С†РµР»С‹Рµ С‡РёСЃР»Р° РёР· С„Р°Р№Р»Р° Рё РІС‹РІРѕРґРёС‚ РёС… РЅР° СЌРєСЂР°РЅ
+ * @param filename РРјСЏ С„Р°Р№Р»Р° РґР»СЏ С‡С‚РµРЅРёСЏ
  */
 void printNumbersFromFile(const std::string& filename) {
     std::ifstream file(filename);
@@ -15,14 +15,14 @@ void printNumbersFromFile(const std::string& filename) {
         throw std::runtime_error("Failed to open file: " + filename);
     }
 
-    // Используем istream_iterator для чтения чисел из файла
+    // РСЃРїРѕР»СЊР·СѓРµРј istream_iterator РґР»СЏ С‡С‚РµРЅРёСЏ С‡РёСЃРµР» РёР· С„Р°Р№Р»Р°
     std::istream_iterator<std::string> input(file);
     std::istream_iterator<std::string> end;
 
-    // Используем ostream_iterator для вывода чисел в cout
+    // РСЃРїРѕР»СЊР·СѓРµРј ostream_iterator РґР»СЏ РІС‹РІРѕРґР° С‡РёСЃРµР» РІ cout
     std::ostream_iterator<std::string> output(std::cout, " ");
 
-    // Копируем числа из файла в вывод с помощью алгоритма copy
+    // РљРѕРїРёСЂСѓРµРј С‡РёСЃР»Р° РёР· С„Р°Р№Р»Р° РІ РІС‹РІРѕРґ СЃ РїРѕРјРѕС‰СЊСЋ Р°Р»РіРѕСЂРёС‚РјР° copy
     std::copy(input, end, output);
 
     std::cout << std::endl;
@@ -30,12 +30,12 @@ void printNumbersFromFile(const std::string& filename) {
 }
 
 /**
- * @brief Точка входа в программу
- * @return 0 в случае успешного выполнения, 1 в случае ошибки
+ * @brief РўРѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕРіСЂР°РјРјСѓ
+ * @return 0 РІ СЃР»СѓС‡Р°Рµ СѓСЃРїРµС€РЅРѕРіРѕ РІС‹РїРѕР»РЅРµРЅРёСЏ, 1 РІ СЃР»СѓС‡Р°Рµ РѕС€РёР±РєРё
  */
 int main() {
     try {
-        const std::string filename = "numbers.txt"; // Имя файла с числами
+        const std::string filename = "numbers.txt"; // РРјСЏ С„Р°Р№Р»Р° СЃ С‡РёСЃР»Р°РјРё
 
         printNumbersFromFile(filename);
     }
