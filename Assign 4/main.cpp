@@ -36,8 +36,8 @@ int countElementsWithAbsLEK(int K, const std::vector<int>& V) {
 }
 
 /**
- * @brief Главная функция: считывает данные с ввода и вызывает алгоритм подсчета.
- * @return Код завершения программы (0 — успех).
+ * @brief 
+ * @return 1 в случае успехи, иначе - 0
  */
 int main() {
     int K;
