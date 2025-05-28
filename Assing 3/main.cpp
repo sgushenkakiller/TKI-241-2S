@@ -16,20 +16,20 @@ void writeUniqueFromSecondHalf(const std::string& name, const std::vector<int>& 
         std::cerr << "Ошибка: вектор должен содержать четное количество элементов." << std::endl;
         return;
     }
- 
+
     size_t mid = V.size() / 2;
 
-  
+
     std::set<int, std::greater<int>> firstHalf(V.begin(), V.begin() + mid);
     std::set<int, std::greater<int>> secondHalf(V.begin() + mid, V.end());
     std::set<int, std::greater<int>> difference;
 
- 
+   
     std::set_difference(
         secondHalf.begin(), secondHalf.end(),
         firstHalf.begin(), firstHalf.end(),
         std::inserter(difference, difference.begin()),
-        std::greater<int>()  
+        std::greater<int>()
     );
 
     
@@ -43,11 +43,22 @@ void writeUniqueFromSecondHalf(const std::string& name, const std::vector<int>& 
     std::copy(difference.begin(), difference.end(), output);
 }
 
+/**
+ * @return 1 в случае успеха, иначе - 0
+ */
 int main() {
-    std::vector<int> V = { 1, 2, 3, 4, 5, 6, 7, 8 }; 
-    std::string filename = "output.txt";
+    std::string filename;
+    std::vector<int> V;
+    int x;
+
+    std::cout << "Введите имя выходного файла: ";
+    std::cin >> filename;
+
+    std::cout << "Введите четное количество целых чисел: ";
+    while (std::cin >> x) {
+        V.push_back(x);
+    }
 
     writeUniqueFromSecondHalf(filename, V);
-
     return 0;
 }
