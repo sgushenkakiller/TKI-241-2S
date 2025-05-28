@@ -6,7 +6,6 @@
 /**
  * @class LessAbs
  * @brief Функциональный объект для сравнения абсолютных значений двух чисел.
- * @return true, если |a| < |b|.
  */
 class LessAbs {
 public:
@@ -29,7 +28,6 @@ int countElementsWithAbsLEK(int K, const std::vector<int>& V) {
 
     LessAbs lessAbs;
 
-    
     auto predicate = [K, lessAbs](int x) {
         return !lessAbs(K, x);
         };
@@ -37,9 +35,22 @@ int countElementsWithAbsLEK(int K, const std::vector<int>& V) {
     return std::count_if(V.begin(), V.end(), predicate);
 }
 
+/**
+ * @brief Главная функция: считывает данные с ввода и вызывает алгоритм подсчета.
+ * @return Код завершения программы (0 — успех).
+ */
 int main() {
-    std::vector<int> V = { -10, -5, 0, 3, 4, 6, 9 };
-    int K = 5;
+    int K;
+    std::cout << "Введите положительное число K: ";
+    std::cin >> K;
+
+    std::cout << "Введите элементы вектора (Ctrl+D / Ctrl+Z для завершения): ";
+
+    std::vector<int> V;
+    int x;
+    while (std::cin >> x) {
+        V.push_back(x);
+    }
 
     int result = countElementsWithAbsLEK(K, V);
 
