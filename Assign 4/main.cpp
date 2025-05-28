@@ -37,7 +37,7 @@ int countElementsWithAbsLEK(int K, const std::vector<int>& V) {
 
 /**
  * @brief 
- * @return 1 в случае успехи, иначе - 0
+ * @return 1 в случае успеха, иначе - 0
  */
 int main() {
     int K;
