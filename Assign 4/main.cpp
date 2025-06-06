@@ -38,11 +38,12 @@ int countElementsWithAbsLEK(int K, const std::vector<int>& V) {
 /**
  * @brief 
  * @return 1 в случае успехи, иначе - 0
+ * 
  */
 int main() {
-    int K;
+    int k;
     std::cout << "Введите положительное число K: ";
-    std::cin >> K;
+    std::cin >> k;
 
     std::cout << "Введите элементы вектора (ввод до конца потока, например Ctrl+D / Ctrl+Z):\n";
 
@@ -51,7 +52,7 @@ int main() {
 
     int result = countElementsWithAbsLEK(K, V);
 
-    std::cout << "Количество элементов, для которых |x| ≤ " << K << ": " << result << std::endl;
+    std::cout << "Количество элементов, для которых |x| ≤ " << k << ": " << result << std::endl;
 
     return 0;
 }
