@@ -44,13 +44,10 @@ int main() {
     std::cout << "Введите положительное число K: ";
     std::cin >> K;
 
-    std::cout << "Введите элементы вектора (Ctrl+D / Ctrl+Z для завершения): ";
+    std::cout << "Введите элементы вектора (ввод до конца потока, например Ctrl+D / Ctrl+Z):\n";
 
-    std::vector<int> V;
-    int x;
-    while (std::cin >> x) {
-        V.push_back(x);
-    }
+    std::istream_iterator<int> in_it(std::cin), end;
+    std::vector<int> V(in_it, end);
 
     int result = countElementsWithAbsLEK(K, V);
 
