@@ -49,16 +49,15 @@ void writeUniqueFromSecondHalf(const std::string& name, const std::vector<int>& 
 int main() {
     std::string filename;
     std::vector<int> V;
-    int x;
 
     std::cout << "Введите имя выходного файла: ";
     std::cin >> filename;
 
     std::cout << "Введите четное количество целых чисел: ";
-    while (std::cin >> x) {
-        V.push_back(x);
-    }
+    std::istream_iterator<int> in_it(std::cin), end;
+    V.assign(in_it, end);
 
     writeUniqueFromSecondHalf(filename, V);
     return 0;
 }
+
