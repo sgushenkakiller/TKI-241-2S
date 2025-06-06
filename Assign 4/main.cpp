@@ -45,7 +45,7 @@ int main() {
     std::cout << "Введите положительное число K: ";
     std::cin >> k;
 
-    std::cout << "Введите элементы вектора (ввод до конца потока, например Ctrl+D / Ctrl+Z):\n";
+    std::cout << "Введите элементы вектора:\n";
 
     std::istream_iterator<int> in_it(std::cin), end;
     std::vector<int> V(in_it, end);
