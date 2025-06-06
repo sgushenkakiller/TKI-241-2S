@@ -49,8 +49,7 @@ int main() {
 
     std::istream_iterator<int> in_it(std::cin), end;
     std::vector<int> V(in_it, end);
-
-    int result = countElementsWithAbsLEK(K, V);
+    int result = countElementsWithAbsLEK(k, V);
 
     std::cout << "Количество элементов, для которых |x| ≤ " << k << ": " << result << std::endl;
 
